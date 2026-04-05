@@ -337,12 +337,34 @@ const subjectNameVietnamese = {
     anh: 'Anh'
 };
 
-// Thêm event lisnenter khi chọn môn
+// Initialize all event listeners on DOMContentLoaded
 document.addEventListener('DOMContentLoaded', function() {
+    // Subject choice event listeners
     const subjectInputs = document.querySelectorAll('input[name="subject-choice"]');
     subjectInputs.forEach(input => {
         input.addEventListener('change', handleSubjectSelection);
     });
+
+    // Event listeners for smooth scroll on internal anchor links
+    const navLinks = document.querySelectorAll('.nav-link');
+    navLinks.forEach(link => {
+        const href = link.getAttribute('href');
+        // Only add click handler for internal anchor links
+        if (href && href.startsWith('#')) {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+                const targetId = href.substring(1);
+                smoothScrollTo(targetId);
+            });
+        }
+    });
+
+    // Debounced scroll handler
+    const debouncedHandleScroll = debounce(handleScroll, 10);
+    window.addEventListener('scroll', debouncedHandleScroll);
+
+    // Initial scroll check
+    handleScroll();
 });
 
 // chỉ cho chọn 1 khối
@@ -665,32 +687,6 @@ function handleScroll() {
         }
     });
 }
-
-// Initialize scroll handling
-document.addEventListener('DOMContentLoaded', function() {
-    // Existing event listeners
-    const subjectInputs = document.querySelectorAll('input[name="subject-choice"]');
-    subjectInputs.forEach(input => {
-        input.addEventListener('change', handleSubjectSelection);
-    });
-
-    // New event listeners - only for internal links (starting with #)
-    const navLinks = document.querySelectorAll('.nav-link[href^="#"]');
-    navLinks.forEach(link => {
-        link.addEventListener('click', function(e) {
-            e.preventDefault();
-            const targetId = this.getAttribute('href').substring(1);
-            smoothScrollTo(targetId);
-        });
-    });
-
-    // Debounced scroll handler
-    const debouncedHandleScroll = debounce(handleScroll, 10);
-    window.addEventListener('scroll', debouncedHandleScroll);
-
-    // Initial scroll check
-    handleScroll();
-});
 
 // Loading effect for search button
 function showLoading(button) {
