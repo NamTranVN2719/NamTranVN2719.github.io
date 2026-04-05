@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ngành Nghề - Tư Vấn Chọn Nghề</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Sticky Navbar -->
+    <nav id="navbar" class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">Tư Vấn Nghề</div>
+            <ul class="nav-menu">
+                <li><a href="index.html" class="nav-link">Trang chủ</a></li>
+                <li><a href="careers.html" class="nav-link active">Ngành nghề</a></li>
+                <li><a href="about.html" class="nav-link">Giới thiệu</a></li>
+                <li><a href="contact.html" class="nav-link">Liên hệ</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="page-intro">
+        Khám phá các ngành nghề tiềm năng dựa trên khối thi THPT. Click vào từng ngành để xem chi tiết thông tin và cơ hội nghề nghiệp.
+    </div>
+
+    <div class="container">
+        <header>
+            <h1>🌟 Các Ngành Nghề Nổi Bật</h1>
+            <p>Khám phá các lĩnh vực nghề nghiệp tiềm năng cho tương lai</p>
+        </header>
+
+        <main>
+            <div class="content-wrapper">
+                <section class="careers-section">
+                    <div class="careers-grid">
+                        <div class="career-category-card" data-category="cong-nghe">
+                            <div class="category-icon">💻</div>
+                            <h3>Công Nghệ</h3>
+                            <p>Kỹ sư phần mềm, AI, dữ liệu, điện tử</p>
+                            <div class="category-examples">
+                                <small>Kỹ Sư Phần Mềm, Nhà Khoa Học Dữ Liệu, Kỹ Sư AI</small>
+                            </div>
+                        </div>
+
+                        <div class="career-category-card" data-category="y-te">
+                            <div class="category-icon">🏥</div>
+                            <h3>Y Tế</h3>
+                            <p>Bác sĩ, dược sĩ, điều dưỡng, y tá</p>
+                            <div class="category-examples">
+                                <small>Bác Sĩ, Dược Sĩ, Điều Dưỡng</small>
+                            </div>
+                        </div>
+
+                        <div class="career-category-card" data-category="ky-thuat">
+                            <div class="category-icon">⚙️</div>
+                            <h3>Kỹ Thuật</h3>
+                            <p>Cơ khí, điện, xây dựng, hóa học</p>
+                            <div class="category-examples">
+                                <small>Kỹ Sư Cơ Khí, Kỹ Sư Xây Dựng, Kỹ Sư Hóa Học</small>
+                            </div>
+                        </div>
+
+                        <div class="career-category-card" data-category="kinh-doanh">
+                            <div class="category-icon">📊</div>
+                            <h3>Kinh Doanh</h3>
+                            <p>Marketing, tài chính, quản trị, kinh tế</p>
+                            <div class="category-examples">
+                                <small>Marketing, Tài Chính, Quản Trị Kinh Doanh</small>
+                            </div>
+                        </div>
+
+                        <div class="career-category-card" data-category="ngon-ngu">
+                            <div class="category-icon">🗣️</div>
+                            <h3>Ngoại Ngữ</h3>
+                            <p>Phiên dịch, biên phiên dịch, ngôn ngữ học</p>
+                            <div class="category-examples">
+                                <small>Phiên Dịch Viên, Biên Dịch Viên, Giáo Viên Ngoại Ngữ</small>
+                            </div>
+                        </div>
+
+                        <div class="career-category-card" data-category="thiet-ke">
+                            <div class="category-icon">🎨</div>
+                            <h3>Thiết Kế</h3>
+                            <p>Đồ họa, kiến trúc, thời trang, nội thất</p>
+                            <div class="category-examples">
+                                <small>Thiết Kế Đồ Họa, Kiến Trúc, Thiết Kế Nội Thất</small>
+                            </div>
+                        </div>
+
+                        <div class="career-category-card" data-category="toa-dam">
+                            <div class="category-icon">⚖️</div>
+                            <h3>Pháp Luật</h3>
+                            <p>Luật sư, tòa án, tư pháp</p>
+                            <div class="category-examples">
+                                <small>Luật Sư, Chuyên Gia Pháp Lý, Tư Pháp</small>
+                            </div>
+                        </div>
+
+                        <div class="career-category-card" data-category="giao-duc">
+                            <div class="category-icon">🎓</div>
+                            <h3>Giáo Dục</h3>
+                            <p>Giáo viên, nhà giáo dục, đào tạo</p>
+                            <div class="category-examples">
+                                <small>Giáo Viên, Nhà Giáo Dục, Chuyên Gia Đào Tạo</small>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </main>
+    </div>
+
+    <!-- Back to Top Button -->
+    <button id="back-to-top" class="back-to-top" onclick="scrollToTop()">
+        <span>↑</span>
+    </button>
+
+    <!-- Career Detail Modal -->
+    <div id="career-modal" class="modal-overlay">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 id="modal-title" class="modal-title">Career Details</h2>
+                <button class="modal-close" onclick="closeModal()">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div id="career-detail" class="career-detail">
+                    <!-- Career details will be populated by JavaScript -->
+                </div>
+                <div class="modal-form">
+                    <h3>📧 Gửi Yêu Cầu Tư Vấn</h3>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="contact-name">Họ và tên *</label>
+                            <input type="text" id="contact-name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="contact-email">Email *</label>
+                            <input type="email" id="contact-email" required>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="contact-message">Nội dung tư vấn</label>
+                        <textarea id="contact-message" placeholder="Hãy mô tả nhu cầu tư vấn của bạn..."></textarea>
+                    </div>
+                    <button class="btn-submit-modal" onclick="sendCareerInquiry()">Gửi tư vấn</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="careers.js"></script>
+</body>
+</html>

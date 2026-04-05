@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tư Vấn Chọn Nghề - Lớp 12</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="page-intro">
+        Web được làm bởi tổ 2, 12tin(23-26) ctg.<br>
+        <span class="warn">Trang web sử dụng nguồn dữ liệu điểm chuẩn đại học 2025 được tổng hợp từ nhiều nguồn trên mạng nên sẽ có sai sót về dữ liệu. Về cách tính điểm do đội viên chưa được trải nghiệm thi nên cũng sẽ có sai sót.</span>
+    </div>
+
+    <!-- Sticky Navbar -->
+    <nav id="navbar" class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">Tư Vấn Nghề</div>
+            <ul class="nav-menu">
+                <li><a href="index.html" class="nav-link active">Trang chủ</a></li>
+                <li><a href="careers.html" class="nav-link">Ngành nghề</a></li>
+                <li><a href="about.html" class="nav-link">Giới thiệu</a></li>
+                <li><a href="contact.html" class="nav-link">Liên hệ</a></li>
+            </ul>
+        </div>
+    </nav>
+
+
+    <div class="container" id="top">
+        <main>
+            <div class="content-wrapper">
+
+                <!-- Phần chọn khối tổ hợp và sở thích của học sinh -->
+                <section class="form-section" id="form-section">
+                    <div class="form-card">
+                        <h2>🎯 Bước 1: Chọn Khối Tổ Hợp Môn Học</h2>
+                        <p class="instruction-text">Chọn khối bạn muốn tìm hiểu (chỉ chọn 1)</p>
+                        <div class="subject-grid" id="blockGrid">
+                            <label class="subject-option-checkbox">
+                                <input type="checkbox" name="block-choice" value="a00" onchange="handleBlockSelection(event)">
+                                <span class="subject-name">A00</span>
+                                <span class="subject-emoji">🔢⚛️🧪</span>
+                            </label>
+                            <label class="subject-option-checkbox">
+                                <input type="checkbox" name="block-choice" value="a01" onchange="handleBlockSelection(event)">
+                                <span class="subject-name">A01</span>
+                                <span class="subject-emoji">🔢⚛️🗣️</span>
+                            </label>
+                            <label class="subject-option-checkbox">
+                                <input type="checkbox" name="block-choice" value="b00" onchange="handleBlockSelection(event)">
+                                <span class="subject-name">B00</span>
+                                <span class="subject-emoji">🔢🧪🧬</span>
+                            </label>
+                            <label class="subject-option-checkbox">
+                                <input type="checkbox" name="block-choice" value="b01" onchange="handleBlockSelection(event)">
+                                <span class="subject-name">B01</span>
+                                <span class="subject-emoji">🔢🧪🗣️</span>
+                            </label>
+                            <label class="subject-option-checkbox">
+                                <input type="checkbox" name="block-choice" value="c00" onchange="handleBlockSelection(event)">
+                                <span class="subject-name">C00</span>
+                                <span class="subject-emoji">🔢🏛️🌍</span>
+                            </label>
+                            <label class="subject-option-checkbox">
+                                <input type="checkbox" name="block-choice" value="c01" onchange="handleBlockSelection(event)">
+                                <span class="subject-name">C01</span>
+                                <span class="subject-emoji">🔢🏛️🗣️</span>
+                            </label>
+                            <label class="subject-option-checkbox">
+                                <input type="checkbox" name="block-choice" value="d01" onchange="handleBlockSelection(event)">
+                                <span class="subject-name">D01</span>
+                                <span class="subject-emoji">🔢📖🗣️</span>
+                            </label>
+                        </div>
+                        <div id="selected-subjects" class="selected-subjects"></div>
+                    </div>
+                    <div class="form-card">
+                        <h2>❤️ Bước 2: Chọn Sở Thích (Tùy Chọn)</h2>
+                        <p class="instruction-text">Chọn lĩnh vực bạn quan tâm để nhận gợi ý ngành phù hợp</p>
+                        <div class="interest-grid">
+                            <label class="interest-option">
+                                <input type="checkbox" name="interest" value="cong-nghe">
+                                <span>💻 Công Nghệ</span>
+                            </label>
+                            <label class="interest-option">
+                                <input type="checkbox" name="interest" value="y-te">
+                                <span>🏥 Y Tế</span>
+                            </label>
+                            <label class="interest-option">
+                                <input type="checkbox" name="interest" value="ky-thuat">
+                                <span>⚙️ Kỹ Thuật</span>
+                            </label>
+                            <label class="interest-option">
+                                <input type="checkbox" name="interest" value="kinh-doanh">
+                                <span>📊 Kinh Doanh</span>
+                            </label>
+                            <label class="interest-option">
+                                <input type="checkbox" name="interest" value="ngon-ngu">
+                                <span>🗣️ Ngoại Ngữ</span>
+                            </label>
+                            <label class="interest-option">
+                                <input type="checkbox" name="interest" value="thiet-ke">
+                                <span>🎨 Thiết Kế</span>
+                            </label>
+                            <label class="interest-option">
+                                <input type="checkbox" name="interest" value="toa-dam">
+                                <span>⚖️ Pháp Luật</span>
+                            </label>
+                            <label class="interest-option">
+                                <input type="checkbox" name="interest" value="giao-duc">
+                                <span>🎓 Giáo Dục</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <button class="btn-submit" onclick="searchByBlock()">🔍 Xem Kết Quả</button>
+                </section>
+
+                <!-- Hướng dẫn thang điểm hiển thị -->
+                <section class="scale-guide" style="background: #f5f5f5; padding: 20px; border-radius: 10px; margin: 20px 0; display: none;" id="scaleGuide">
+                    <h3>📏 Hướng Dẫn Thang Điểm</h3>
+                    <p style="font-size: 0.95em; line-height: 1.6;">
+                        <strong>Thang 30:</strong> Điểm = (Toán + Lý/Hóa/Sinh + Tiếng Anh). Mỗi môn tối đa 10 điểm<br>
+                        <strong>Thang 40:</strong> Một số môn có hệ số nhân 2. Ví dụ: Toán × 2 + Lý + Tiếng Anh = 40 điểm<br>
+                        <strong>Thang 100:</strong> Thang quy đổi do ĐH tự tính (kết hợp ĐGNL, THPT, học bạ...)
+                    </p>
+                </section>
+
+                <!-- Khu vực hiển thị kết quả: khối phù hợp, ngành nghề và điểm trung bình -->
+                <section class="results-section" id="results" style="display: none;">
+
+                    <div class="result-card">
+                        <h2>✨ Gợi Ý Ngành Nghề Cho Bạn</h2>
+                        <div id="careers" class="career-list"></div>
+                    </div>
+
+                    <div class="result-card">
+                        <h2>📊 Điểm Trung Bình Thi Tổ Hợp <span id="selectedSubject"></span> - ĐH 2025</h2>
+                        <div id="universities" class="university-list"></div>
+                        <p class="note">*Dữ liệu dựa trên kết quả tuyển sinh năm 2025 - Điểm là tổng 3 môn</p>
+                    </div>
+                </section>
+            </div>
+        </main>
+
+        <footer id="footer">
+            <p>💡 Hãy chọn một môn học và ít nhất một sở thích để nhận gợi ý</p>
+        </footer>
+    </div>
+
+    <!-- Back to Top Button -->
+    <button id="back-to-top" class="back-to-top" onclick="scrollToTop()">
+        <span>↑</span>
+    </button>
+
+    <script src="script.js"></script>
+    <script>
+        // Set active navbar link for index page
+        document.addEventListener('DOMContentLoaded', function() {
+            const navLinks = document.querySelectorAll('.nav-link');
+            navLinks.forEach(link => {
+                if (link.getAttribute('href') === 'index.html' || link.getAttribute('href') === '#top') {
+                    link.classList.add('active');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
